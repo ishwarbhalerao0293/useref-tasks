@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #172033;
+  background: #f5f7fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Main layout */
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(224, 231, 255, 0.65), transparent 48%),
+    #f7f8fc;
+}
+
+/* Navigation */
+.navbar {
+  height: 76px;
+  padding: 0 max(6%, calc((100% - 1120px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #e9edf5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #172033;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.brand-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 11px;
+  color: white;
+  background: linear-gradient(135deg, #6366f1, #4338ca);
+  box-shadow: 0 5px 12px rgba(79, 70, 229, 0.22);
+  font-size: 18px;
+}
+
+.nav-tag {
+  padding: 8px 12px;
+  border: 1px solid #e0e7ff;
+  border-radius: 30px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+/* Hero */
+.hero {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 66px 24px 42px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 8px 13px;
+  border: 1px solid #e0e7ff;
+  border-radius: 30px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.hero h1 {
+  margin: 20px 0 13px;
+  color: #111827;
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.15;
+}
+
+.hero h1 span {
+  color: #4f46e5;
+}
+
+.hero>p {
+  max-width: 530px;
+  margin: 0 auto;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Content cards */
+.container {
+  width: min(100% - 40px, 780px);
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+
+.task-card {
+  padding: 30px;
+  border: 1px solid #e8ebf3;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(30, 41, 59, 0.045);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.task-card:hover {
+  box-shadow: 0 14px 35px rgba(30, 41, 59, 0.075);
+  transform: translateY(-2px);
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon-box {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.focus-icon {
+  color: #4f46e5;
+  background: #eef2ff;
+}
+
+.timer-icon {
+  color: #08916c;
+  background: #e7faf3;
+}
+
+.task-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #818cf8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.card-heading h2 {
+  margin: 0;
+  color: #182033;
+  font-size: 21px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.status {
+  margin-left: auto;
+  padding: 7px 9px;
+  border-radius: 7px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+}
+
+.description {
+  margin: 20px 0 25px;
+  color: #737d90;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Focus input */
+.task-card label {
+  display: block;
+  margin-bottom: 9px;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.input-group {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.input-group input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 14px 15px;
+  border: 1px solid #dfe4ee;
+  border-radius: 10px;
+  outline: none;
+  background: #fbfcff;
+  color: #172033;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.input-group input::placeholder {
+  color: #a0a8b8;
+}
+
+.input-group input:focus {
+  border-color: #818cf8;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 19px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.primary-btn:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.hint {
+  margin: 13px 0 0;
+  color: #9aa3b3;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Stopwatch */
+.stopwatch-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fcfdfd 100%);
+}
+
+.timer-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px 26px;
+  border: 1px solid #e4f4ed;
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(209, 250, 229, 0.55), transparent 72%),
+    #f7fcf9;
+}
+
+.timer-caption {
+  color: #6d9a87;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.time-display {
+  margin: 13px 0 5px;
+  color: #123d30;
+  font-size: clamp(54px, 9vw, 70px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.seconds-display {
+  color: #739183;
+  font-size: 12px;
+}
+
+.stopwatch-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.stopwatch-buttons button {
+  display: inline-flex;
+  min-width: 108px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 18px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.stopwatch-buttons button:hover {
+  transform: translateY(-2px);
+}
+
+.start-btn {
+  background: #059669;
+  color: white;
+}
+
+.start-btn:hover {
+  background: #047857;
+}
+
+.stop-btn {
+  border-color: #fed7aa !important;
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.stop-btn:hover {
+  background: #ffedd5;
+}
+
+.reset-btn {
+  border-color: #e2e8f0 !important;
+  background: #f8fafc;
+  color: #475569;
+}
+
+.reset-btn:hover {
+  background: #f1f5f9;
+}
+
+.centered {
+  text-align: center;
+}
+
+/* Learning note */
+.concept-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 23px;
+  border: 1px solid #e1e7ff;
+  border-radius: 16px;
+  background: linear-gradient(110deg, #f0f3ff, #f8f9ff);
+}
+
+.bulb {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 10px;
+  background: white;
+  color: #4f46e5;
+  box-shadow: 0 3px 9px rgba(79, 70, 229, 0.08);
+  font-size: 19px;
+}
+
+.concept-note h3 {
+  margin: 2px 0 8px;
+  color: #303b68;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.concept-note p {
+  margin: 0;
+  color: #687493;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.concept-note strong {
+  color: #4543a8;
+}
+
+/* Footer */
+.footer {
+  padding: 36px 15px 28px;
+  text-align: center;
+  color: #98a1b2;
+  font-size: 11px;
+}
+
+.footer span {
+  color: #f43f5e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    height: 65px;
+    padding: 0 20px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .nav-tag {
+    padding: 7px 9px;
+    font-size: 8px;
+    letter-spacing: 0.6px;
+  }
+
+  .hero {
+    padding: 49px 20px 30px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .hero>p {
+    font-size: 13px;
+  }
+
+  .container {
+    width: calc(100% - 28px);
+    gap: 17px;
+  }
+
+  .task-card {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .card-heading {
+    gap: 11px;
+  }
+
+  .icon-box {
+    width: 42px;
+    height: 42px;
+  }
+
+  .card-heading h2 {
+    font-size: 18px;
+  }
+
+  .status {
+    padding: 6px;
+    font-size: 7px;
+    letter-spacing: 0;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group input {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .primary-btn {
+    min-height: 46px;
+  }
+
+  .stopwatch-buttons {
+    gap: 8px;
+  }
+
+  .stopwatch-buttons button {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 8px;
+  }
+
+  .concept-note {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

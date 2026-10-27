@@ -1,0 +1,197 @@
+/* ===== Global Layout ===== */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #f4f7fb;
+  color: #1e293b;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #2563eb;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.header p {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* ===== Main Container ===== */
+.container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+/* ===== Cards ===== */
+.task-card {
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.task-card h2 {
+  margin: 0 0 10px;
+  font-size: 23px;
+  color: #0f172a;
+}
+
+.task-card>p {
+  margin: 0 0 24px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ===== Focus Input ===== */
+.input-group {
+  display: flex;
+  gap: 12px;
+}
+
+.input-group input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.input-group button {
+  background: #2563eb;
+}
+
+/* ===== Stopwatch ===== */
+.stopwatch {
+  padding: 28px 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.time-display {
+  margin-bottom: 25px;
+  color: #0f172a;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.time-display span {
+  color: #64748b;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.stopwatch-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.start-btn {
+  background: #16a34a;
+}
+
+.stop-btn {
+  background: #ea580c;
+}
+
+.reset-btn {
+  background: #475569;
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: 35px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 600px) {
+  .app {
+    padding: 28px 14px;
+  }
+
+  .header h1 {
+    font-size: 29px;
+  }
+
+  .task-card {
+    padding: 22px 18px;
+  }
+
+  .task-card h2 {
+    font-size: 20px;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group button {
+    width: 100%;
+  }
+
+  .time-display {
+    font-size: 44px;
+  }
+}
